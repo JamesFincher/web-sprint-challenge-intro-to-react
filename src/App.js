@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Character from './components/Character.js';
 const App = () => {
   const [data, setData] = useState([]);
   const [person, setCurrentPerson] = useState([]);
@@ -14,14 +14,15 @@ const App = () => {
       .then((res) => setNextPage(res.data.next))
       .catch((err) => console.log(err));
   }, []);
-  useEffect(() => {
-    console.table(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.table(data);
+  // }, [data]);
   return (
     <>
       <div className='App'>
         <h1 className='Header'>Characters</h1>
       </div>
+      <Character data={data} />
     </>
   );
 };

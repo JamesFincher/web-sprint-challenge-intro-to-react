@@ -18,9 +18,11 @@ const App = () => {
     console.table(data);
   }, [data]);
   return (
-    <div className='App'>
-      <h1 className='Header'>Characters</h1>
-    </div>
+    <>
+      <div className='App'>
+        <h1 className='Header'>Characters</h1>
+      </div>
+    </>
   );
 };
 

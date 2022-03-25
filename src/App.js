@@ -6,11 +6,12 @@ const App = () => {
   const [person, setCurrentPerson] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [nextPage, setNextPage] = useState('');
+  const [url, setUrl] = useState('https://swapi.dev/api/people/');
 
   useEffect(() => {
     axios
-      .get('https://swapi.dev/api/people')
-      .then((res) => setData(res.data.results))
+      .get(`${url}`)
+      .then((res) => setData(res.data))
       .then((res) => setNextPage(res.data.next))
       .catch((err) => console.log(err));
   }, []);
